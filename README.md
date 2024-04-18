@@ -2,29 +2,28 @@
 
 ## Introduction
 
-Welcome to the Yap project! This repository houses a simple chat application built using the TALL stack (Tailwind CSS, Alpine.js, Laravel, and Livewire). The focus of this project is to create a real-time chat experience without the complexity of websockets, utilizing Livewire's `wire:poll` for state management and updates.
+"Yap" is a straightforward chat application that draws inspiration from popular messaging platforms such as WhatsApp, Telegram, etc. It is crafted using the TALL stack, which stands for Tailwind CSS, Alpine.js, Laravel, and Livewire. The project emphasizes the use of Livewire's `wire:poll` for real-time functionality, deliberately avoiding the complexity of websockets.
 
-## Project Goals
+## Educational Purpose
 
-The primary objective of this project is to serve as an educational tool for learning and mastering Laravel and Livewire 3. By developing a chat application, we aim to demonstrate the practical application of these technologies in a real-world scenario.
+The creation of Yap serves a personal educational purpose. It is a practical project aimed at delving deeper into the intricacies of Laravel and Livewire 3, understanding their capabilities, and applying them to build a functional and interactive chat application.
 
-## TALL Stack
+## TALL Stack Components
 
--   **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
--   **Alpine.js**: A rugged, minimal framework for composing JavaScript behavior in your markup.
--   **Laravel**: A PHP web application framework with expressive, elegant syntax.
--   **Livewire**: A full-stack framework for Laravel that makes building dynamic interfaces simple.
+-   **Tailwind CSS**: A utility-first CSS framework for designing custom user interfaces with speed and efficiency.
+-   **Alpine.js**: A minimalistic JavaScript framework for composing behavior directly in your markup.
+-   **Laravel**: A PHP web application framework with an expressive, elegant syntax, providing tools and resources for robust backend development.
+-   **Livewire 3**: A full-stack framework for Laravel that simplifies the creation of dynamic interfaces, leveraging server-side rendering.
 
 ## Features
 
--   Real-time messaging without websockets.
--   Utilizes `wire:poll` for fetching data at regular intervals.
--   Responsive design with Tailwind CSS.
--   Interactive UI components with Alpine.js.
+-   Simple and intuitive chat interface.
+-   Real-time message exchange using `wire:poll`.
+-   No use of websockets, ensuring ease of deployment and maintenance.
 
 ## Getting Started
 
-To get started with Yap, clone the repository and follow the setup instructions:
+To set up the Yap project on your local machine, follow these steps:
 
 ```bash
 git clone https://github.com/chrislorando/yap-app.git
@@ -33,3 +32,7 @@ composer install
 npm install && npm run dev
 php artisan serve
 ```
+
+## References
+
+https://www.youtube.com/watch?v=8Ek8M0XGDBU

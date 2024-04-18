@@ -1,5 +1,7 @@
 # Yap - Simple Chat Application
 
+![image](https://github.com/chrislorando/yap-app/assets/10240380/f2a24ee0-9104-465e-9d4b-bdc1e4c77849)
+
 ## Introduction
 
 "Yap" is a straightforward chat application that draws inspiration from popular messaging platforms such as WhatsApp, Telegram, etc. It is crafted using the TALL stack, which stands for Tailwind CSS, Alpine.js, Laravel, and Livewire. The project emphasizes the use of Livewire's `wire:poll` for real-time functionality, deliberately avoiding the complexity of websockets.

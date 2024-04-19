@@ -35,6 +35,19 @@ npm install && npm run dev
 php artisan serve
 ```
 
+## Demo
+
+http://yap.demolite.my.id
+
+email : test@example.com
+password : password
+
+email : jamil.crooks@example.net
+password : password
+
+Or you can create user in registration page
+http://yap.demolite.my.id/register
+
 ## References
 
 https://www.youtube.com/watch?v=8Ek8M0XGDBU

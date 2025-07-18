@@ -1,6 +1,7 @@
 <div>
+    @if($showChat)
     <div class="mt-11 pb-15 px-16 xl:px-20 h-[72vh] lg:h-[78vh] overflow-y-auto overflow-x-hidden">
-        <div wire:poll class="relative">
+        <div wire:poll.visible class="relative">
             @php($date='')
             @foreach($models as $row)
                 @if(date('Y-m-d',strtotime($date))!=date('Y-m-d',strtotime($row->created_at)))
@@ -24,10 +25,9 @@
         </div>
     </div>
     
-    @if($showForm)
-    <form class="p-2 ms-0 fixed bottom-0 bg-gray-700 md:w-[66vw] lg:w-[71vw] xl:w-[77vw]" wire:submit.prevent='send'>
+    <form class="p-2 ms-0 fixed bottom-0 bg-gray-700 md:w-[66vw] lg:w-[75vw] xl:w-[77vw]" wire:submit.prevent='send'>
         <div class="join">
-            <input class="input input-bordered join-item md:w-[58vw] lg:w-[63vw] xl:w-[71vw]" placeholder="Type a message" wire:model='message' autofocus />
+            <input class="input input-bordered join-item md:w-[58vw] lg:w-[69vw] xl:w-[71vw]" placeholder="Type a message" wire:model='message' autofocus />
             <button type="submit" class="btn join-item rounded-r-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
@@ -36,6 +36,4 @@
           </div>
     </form>
     @endif
-
-    
 </div>

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yap-app
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: >
+      sh -c "
+        [ -f .env ] || cp .env.example .env &&
+        php artisan key:generate &&
+        php artisan config:cache &&
+        php artisan route:cache &&
+        php artisan view:cache &&
+        php artisan migrate --force &&
+        php-fpm
+      "
+    ports:
+      - "9001:9000"
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    driver: bridge

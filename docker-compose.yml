@@ -11,6 +11,7 @@ services:
     working_dir: /var/www
     command: >
       sh -c "
+        while [ ! -f .env.example ]; do sleep 1; echo 'Waiting for .env.example...'; done &&
         [ -f .env ] || cp .env.example .env &&
         php artisan key:generate &&
         php artisan config:cache &&

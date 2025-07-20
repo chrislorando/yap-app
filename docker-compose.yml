@@ -18,9 +18,7 @@ services:
         php artisan config:cache &&
         php artisan route:cache &&
         php artisan view:cache &&
-        php artisan migrate --force &&
-        php-fpm --nodaemonize &
-        tail -f /dev/null
+        php artisan migrate --force
       "
     ports:
       - "9001:9000"

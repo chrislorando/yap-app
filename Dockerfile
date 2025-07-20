@@ -23,7 +23,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 # Copy only necessary files first
-COPY composer.json composer.lock package.json webpack.mix.js ./
+COPY composer.json composer.lock package.json ./
 COPY resources/ ./resources/
 COPY database/ ./database/
 

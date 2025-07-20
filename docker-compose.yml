@@ -18,7 +18,7 @@ services:
         php artisan route:cache &&
         php artisan view:cache &&
         php artisan migrate --force &&
-        php-fpm
+        php-fpm -p 9001
       "
     ports:
       - "9001:9001"

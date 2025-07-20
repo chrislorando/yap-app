@@ -19,10 +19,10 @@ services:
         php artisan route:cache &&
         php artisan view:cache &&
         php artisan migrate --force &&
-        php-fpm --nodaemonize -y /usr/local/etc/php-fpm.conf -p 9001
+        php-fpm
       "
     ports:
-      - "9001:9001"
+      - "9001:9000"
     networks:
       - yap-network
 

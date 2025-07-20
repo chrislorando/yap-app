@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: yap-app
-    volumes:
-      - /var/lib/jenkins/workspace/yap:/var/www
+    # volumes:
+    #   - /var/lib/jenkins/workspace/yap:/var/www
     working_dir: /var/www
     command: >
       sh -c "

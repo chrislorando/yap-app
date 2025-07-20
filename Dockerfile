@@ -1,23 +1,23 @@
 FROM php:8.2-fpm
 
-# Install dependencies with proper cleanup
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    unzip \
     curl \
     git \
-    unzip \
     libzip-dev \
     libonig-dev \
     libxml2-dev \
+    libsqlite3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js from NodeSource (more reliable than Debian's repo)
+# Install Node.js (alternative method)
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y --no-install-recommends nodejs \
+    && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_sqlite zip
+RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

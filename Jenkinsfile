@@ -40,14 +40,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker-compose build --no-cache --pull'
+                sh 'docker compose build --no-cache --pull'
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                    docker compose build
                     docker compose up -d
                     
                     # Tunggu container ready

@@ -63,7 +63,7 @@ pipeline {
     post {
         always {
             sh 'docker compose ps'
-            // cleanWs()
+            cleanWs()
         }
     }
 }

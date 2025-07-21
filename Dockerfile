@@ -38,6 +38,8 @@ RUN npm install && npm run build
 # RUN chown -R www-data:www-data /var/www
 RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
     && chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+    && chmod -R 775 storage bootstrap/cache \
+    && chmod -R 775 /var/www/database/ \
+    && chown -R www-data:www-data /var/www/database/
 
 CMD ["php-fpm"]

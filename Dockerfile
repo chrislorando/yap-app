@@ -49,4 +49,5 @@ RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
     && chmod -R 775 storage bootstrap/cache database \
     && chmod 664 database/database.sqlite
 
+EXPOSE 9000
 CMD ["php-fpm"]

@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: yap-app-${COMPOSE_PROJECT_NAME}
     volumes:
-      - .:/var/www
-      - laravel-storage:/var/www/storage
-      - laravel-db:/var/www/database
+      - ./:/var/www
+      # - laravel-storage:/var/www/storage
+      # - laravel-db:/var/www/database
     environment:
       - APP_ENV=production
       - APP_DEBUG=false

@@ -33,17 +33,7 @@ services:
 
 volumes:
   laravel-db:
-    driver: local
-    driver_opts:
-      type: none
-      device: /var/jenkins_home/workspace/${COMPOSE_PROJECT_NAME}/database
-      o: bind
   laravel-storage:
-    driver: local
-    driver_opts:
-      type: none
-      device: /var/jenkins_home/workspace/${COMPOSE_PROJECT_NAME}/storage
-      o: bind
 
 networks:
   yap-network:

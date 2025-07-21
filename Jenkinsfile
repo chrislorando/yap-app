@@ -2,16 +2,17 @@ pipeline {
     agent any
 
     environment {
-        COMPOSE_PROJECT_NAME = 'yap-app-deployment'
+        COMPOSE_PROJECT_NAME = 'yap-deployment'
     }
 
     stages {
         stage('Prepare') {
             steps {
                 sh '''
-                    mkdir -p docker/nginx/conf.d
-                    touch database/database.sqlite || true
-                    chmod 664 database/database.sqlite
+                    mkdir -p storage/framework/{cache,sessions,views}
+                    mkdir -p database
+                    touch database/database.sqlite
+                    chmod -R 775 storage database
                 '''
             }
         }

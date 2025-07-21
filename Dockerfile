@@ -36,10 +36,17 @@ RUN npm install && npm run build
 
 # Set permissions
 # RUN chown -R www-data:www-data /var/www
+# RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
+#     && chown -R www-data:www-data storage bootstrap/cache \
+#     && chmod -R 775 storage bootstrap/cache \
+#     && chmod -R 775 /var/www/database/ \
+#     && chown -R www-data:www-data /var/www/database/
+
 RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
-    && chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache \
-    && chmod -R 775 /var/www/database/ \
-    && chown -R www-data:www-data /var/www/database/
+    && mkdir -p database/ \
+    && touch database/database.sqlite \
+    && chown -R www-data:www-data storage bootstrap/cache database \
+    && chmod -R 775 storage bootstrap/cache database \
+    && chmod 664 database/database.sqlite
 
 CMD ["php-fpm"]

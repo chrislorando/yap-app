@@ -23,9 +23,9 @@ services:
     container_name: yap-nginx-${COMPOSE_PROJECT_NAME}
     ports:
       - "8081:80"
-    # volumes:
-    #   - ./public:/var/www/public
-    #   - ./docker/nginx/conf.d/:/etc/nginx/conf.d
+    volumes:
+        - ./:/var/www
+        - ./docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - app
     networks:

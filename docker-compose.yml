@@ -31,9 +31,9 @@ services:
     networks:
       - yap-network
 
-volumes:
-  laravel-db:
-  laravel-storage:
+# volumes:
+#   laravel-db:
+#   laravel-storage:
 
 networks:
   yap-network:

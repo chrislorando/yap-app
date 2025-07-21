@@ -6,6 +6,21 @@ pipeline {
     }
 
     stages {
+        stage('Clean Previous') {
+            steps {
+                sh '''
+                    # Remove containers
+                    docker compose down -v --rmi all || true
+                    
+                    # Remove project images
+                    docker images -q ${COMPOSE_PROJECT_NAME}* | xargs -r docker rmi -f
+                    
+                    # Clean network
+                    docker network prune -f
+                '''
+            }
+        }
+
         stage('Prepare') {
             steps {
                 sh '''
@@ -25,14 +40,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker compose build'
+                sh 'docker-compose build --no-cache --pull'
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                    docker compose down || true
                     docker compose build
                     docker compose up -d
                     

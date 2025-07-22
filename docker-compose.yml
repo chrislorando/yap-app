@@ -27,7 +27,7 @@ services:
     volumes:
         # - ./:/var/www
         - ./public:/var/www/public
-        # - ./docker/nginx/conf.d:/etc/nginx/conf.d
+        - ./docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - app
     networks:

@@ -5,11 +5,14 @@
           <div class="px-4 py-5 ">
               <div class="flex space-x-3">
                 <div class="flex-shrink-0">
-                  <img class="h-10 w-10 rounded-full" src="https://avatars.githubusercontent.com/u/167683279?v=4" alt="">
+                  <img class="h-10 w-10 rounded-full" src="https://avatar.iran.liara.run/public/{{$row->id < 100 ? $row->id : 100 }}" alt="">
                 </div>
                 <div class="min-w-0 flex-1">
                   <p class="text-sm font-medium">
                     <a href="#" class="hover:underline">{{ $row->name }}</a>
+                  </p>
+                  <p class="text-sm font-medium truncate">
+                    <a href="#" class="hover:underline">{{ $row->email }}</a>
                   </p>
                   <p class="text-sm text-gray-500">
                     <span href="#" class="hover:underline">{{ $row->lastMessage($row->id) }}</span>

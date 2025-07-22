@@ -35,10 +35,19 @@ services:
         # - /var/lib/docker/volumes/jenkins_home/_data/workspace/${COMPOSE_PROJECT_NAME}/public:/var/www/public
         # - /var/lib/docker/volumes/jenkins_home/_data/workspace/${COMPOSE_PROJECT_NAME}/docker/nginx/conf.d:/etc/nginx/conf.d
     # command: /bin/sh -c "rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    command: /bin/sh -c "cp /template-conf/laravel.conf /etc/nginx/conf.d && nginx -g 'daemon off;'"
+    volumes_from:
+      - nginx-conf
     depends_on:
       - app
     networks:
       - yap-network
+
+nginx-conf:
+  image: busybox
+  volumes:
+    - /template-conf
+  command: /bin/true
 
 volumes:
   yap-public:

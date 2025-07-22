@@ -54,6 +54,8 @@ pipeline {
                     sleep 10
                     
                     # Jalankan migration dan setup Laravel
+                    docker compose exec -T app cp .env.example .env
+                    docker compose exec -T app php artisan key:generate
                     docker compose exec -T app php artisan migrate --force
                     docker compose exec -T app php artisan optimize:clear
                 '''

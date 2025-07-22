@@ -60,6 +60,7 @@ RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
 
 # Salin konfigurasi nginx dari direktori lokal ke image
 COPY ./docker/nginx/conf.d /tmp/conf.d
+COPY ./docker/nginx/conf.d /test
 
 # Salin entrypoint script ke dalam image
 COPY entrypoint.sh /entrypoint.sh

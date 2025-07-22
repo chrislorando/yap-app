@@ -40,7 +40,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker compose build --no-cache --pull'
+                // sh 'docker compose build --no-cache --pull'
+                sh 'docker compose build'
             }
         }
 

@@ -28,8 +28,8 @@ services:
         # - ./:/var/www
         # - ./public:/var/www/public
         # - ./docker/nginx/conf.d:/etc/nginx/conf.d
-        - /var/jenkins_home/_data/workspace/yap-development/public:/var/www/public
-        - /var/jenkins_home/_data/workspace/yap-development/docker/nginx/conf.d:/etc/nginx/conf.d
+        - /var/lib/docker/volumes/jenkins_home/_data/workspace/yap-development/public:/var/www/public
+        - /var/lib/docker/volumes/jenkins_home/_data/workspace/yap-development/docker/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - app
     networks:

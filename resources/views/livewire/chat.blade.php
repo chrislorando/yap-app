@@ -1,8 +1,9 @@
 <div>
     @if($showChat)
     <div class="mt-11 pb-15 px-16 xl:px-20 h-[72vh] lg:h-[78vh] overflow-y-auto overflow-x-hidden">
-        <div class="p-2 ms-0 fixed top-14 left-[23vw] xs:left-[80vw] sm:left-[30.5vw] lg:left-[25.5vw] xl:left-[23vw] w-[66vw] xs:w-[50vw] sm:w-[80vw] lg:w-[77vw] xl:w-[78vw] z-50">
+        {{-- <div class="p-2 ms-0 fixed top-14 left-[23vw] xs:left-[80vw] sm:left-[30.5vw] lg:left-[25.5vw] xl:left-[23vw] w-[66vw] xs:w-[50vw] sm:w-[80vw] lg:w-[77vw] xl:w-[78vw] z-50"> --}}
         {{-- <div class="p-2 ms-0 fixed top-14 left-[70vw] sm:left-[46vw] md:left-[32vw] lg:left-[25.5vw] xl:left-[13vw] w-full z-50">  --}}
+        <div class="p-2 ms-0 absolute top-14 xs:left-0 left-[23vw] w-full z-10">
             <!-- Breadcrumb -->
             <nav class="flex px-5 py-3 text-gray-700 border border-gray-200  bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

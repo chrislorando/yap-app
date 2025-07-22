@@ -8,7 +8,7 @@ services:
     container_name: yap-app-${COMPOSE_PROJECT_NAME}
     volumes:
       - yap-public:/var/www/public
-      - yap-conf:/docker/nginx/conf.d
+      - yap-conf:/var/www/docker/nginx/conf.d
       # - ./public:/var/www/public
       # - ./:/var/www
       # - laravel-storage:/var/www/storage

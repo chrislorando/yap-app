@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                     # Remove containers
-                    docker compose down -v --rmi all || true
+                    # docker compose down -v --rmi all || true
                     
                     # Remove project images
                     docker images -q ${COMPOSE_PROJECT_NAME}* | xargs -r docker rmi -f
@@ -66,7 +66,7 @@ pipeline {
     post {
         always {
             sh 'docker compose ps'
-            // cleanWs()
+            cleanWs()
         }
     }
 }

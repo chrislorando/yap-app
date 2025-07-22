@@ -28,7 +28,7 @@ services:
       - "8081:80"
     volumes:
       - yap-public:/var/www/public
-      # - yap-conf:/docker/nginx/conf.d
+      - yap-conf:/etc/nginx/conf.d
         # - ./:/var/www
         # - ./public:/var/www/public
         # - ./docker/nginx/conf.d:/etc/nginx/conf.d

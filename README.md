@@ -42,7 +42,7 @@ http://yap.demolite.my.id
 email : test@example.com
 password : password
 
-email : jamil.crooks@example.net
+email : weston37@example.com
 password : password
 
 Or you can create user in registration page

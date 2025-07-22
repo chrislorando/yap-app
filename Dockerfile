@@ -28,11 +28,11 @@ WORKDIR /var/www
 # Copy composer files first (for Docker layer caching)
 COPY composer.json composer.lock ./
 
-# Copy npm files first
-COPY package*.json ./
-
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+# Copy npm files first
+COPY package*.json ./
 
 # Install Node dependencies
 RUN npm install

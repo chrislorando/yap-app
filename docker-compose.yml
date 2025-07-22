@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: yap-app-${COMPOSE_PROJECT_NAME}
     volumes:
-      - ./public:/var/www/public
-      # - ./:/var/www
+      # - ./public:/var/www/public
+      - ./:/var/www
       # - laravel-storage:/var/www/storage
       # - laravel-db:/var/www/database
     environment:

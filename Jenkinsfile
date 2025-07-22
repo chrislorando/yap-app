@@ -24,7 +24,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 sh '''
-                    mkdir -p storage/framework/{cache,sessions,views}
+                    mkdir -p storage/framework/{cache,sessions,views} 
                     mkdir -p database
                     touch database/database.sqlite
                     chmod -R 775 storage database

@@ -1,7 +1,8 @@
 <div>
     @if($showChat)
     <div class="mt-11 pb-15 px-16 xl:px-20 h-[72vh] lg:h-[78vh] overflow-y-auto overflow-x-hidden">
-        <div class="p-2 ms-0 fixed top-14 left-[23vw] md:w-[66vw] lg:w-[75vw] xl:w-[78vw] z-50">
+        {{-- <div class="p-2 ms-0 fixed top-14 left-[23vw] xs:left-[80vw] sm:left-[30.5vw] lg:left-[25.5vw] w-[66vw] xs:w-[50vw] sm:w-[80vw] lg:w-[77vw] xl:w-[78vw] z-50"> --}}
+        <div class="p-2 ms-0 fixed top-14 left-[81vw] sm:left-[46vw] md:left-[32vw] lg:left-[25.5vw] xl:left-[23vw] w-full z-50">
             <!-- Breadcrumb -->
             <nav class="flex px-5 py-3 text-gray-700 border border-gray-200  bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -51,9 +52,9 @@
         </div>
     </div>
     
-    <form class="p-2 ms-0 fixed bottom-0 bg-gray-700 md:w-[66vw] lg:w-[75vw] xl:w-[77vw]" wire:submit.prevent='send'>
+    <form class="p-2 ms-0 fixed bottom-0 bg-gray-700 w-full md:w-[66vw] lg:w-[75vw] xl:w-[77vw]" wire:submit.prevent='send'>
         <div class="join">
-            <input class="input input-bordered join-item md:w-[58vw] lg:w-[69vw] xl:w-[71vw]" placeholder="Type a message" wire:model='message' autofocus />
+            <input class="input input-bordered join-item sm:w-[80vw] md:w-[58vw] lg:w-[69vw] xl:w-[71vw]" placeholder="Type a message" wire:model='message' autofocus />
             <button type="submit" class="btn join-item rounded-r-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />

@@ -48,6 +48,8 @@ password : password
 Or you can create user in registration page
 http://yap.demolite.my.id/register
 
+*Not supported for mobile view
+
 ## References
 
 https://www.youtube.com/watch?v=8Ek8M0XGDBU

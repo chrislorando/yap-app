@@ -11,6 +11,7 @@ pipeline {
                 sh '''
                     # Remove containers
                     # docker compose down -v --rmi all || true
+                    docker compose down -v
                     
                     # Remove project images
                     docker images -q ${COMPOSE_PROJECT_NAME}* | xargs -r docker rmi -f

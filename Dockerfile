@@ -31,14 +31,14 @@ COPY composer.json composer.lock ./
 # Copy npm files first
 COPY package*.json ./
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
-
 # Install Node dependencies
 RUN npm install
 
 # Copy application files
 COPY . .
+
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Build frontend assets
 RUN npm run build

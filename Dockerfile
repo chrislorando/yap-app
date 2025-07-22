@@ -59,7 +59,7 @@ RUN mkdir -p storage/framework/{cache,sessions,testing,views} \
     && chmod 664 database/database.sqlite
 
 # Salin konfigurasi nginx dari direktori lokal ke image
-COPY ./conf.d /tmp/conf.d
+COPY ./docker/nginx/conf.d /tmp/conf.d
 
 # Salin entrypoint script ke dalam image
 COPY entrypoint.sh /entrypoint.sh

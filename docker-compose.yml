@@ -24,7 +24,7 @@ services:
     ports:
       - "8081:80"
     volumes:
-        - ./:/var/www
+        - ./public:/var/www/public
         - ./docker/nginx/conf.d:/etc/nginx/conf.d
         # - ./public:/var/www/public
         # - ./docker/nginx:/etc/nginx

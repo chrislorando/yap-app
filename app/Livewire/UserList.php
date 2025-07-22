@@ -12,9 +12,9 @@ class UserList extends Component
     public $isActiveChat;
 
 
-    public function chat($uid)
+    public function chat($uid,$uname)
     {
-        $this->dispatch('open-chat', uid:$uid)->to(Chat::class);
+        $this->dispatch('open-chat', uid:$uid,uname:$uname)->to(Chat::class);
         $this->isActiveChat = $uid;
     }
 

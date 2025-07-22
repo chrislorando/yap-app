@@ -12,14 +12,17 @@ class Chat extends Component
 
     public $uid;
 
+    public $uname;
+
     public $message;
 
     public $showChat = false;
 
     #[On('open-chat')] 
-    public function refreshChat($uid)
+    public function refreshChat($uid, $uname)
     {
         $this->uid = $uid;
+        $this->uname = $uname;
         $this->showChat = true;
     }
 

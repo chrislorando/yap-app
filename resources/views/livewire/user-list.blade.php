@@ -1,7 +1,7 @@
-<section class="mt-16 pb-28 h-[90vh] overflow-y-auto ">
+<section class="mt-16 pb-28 h-[90vh] overflow-y-auto bg-slate-800">
   <div wire:poll.visible class="relative">
       @foreach($models as $row)
-      <div wire:key='{{ $row->id }}' class="border-b border-gray-500 cursor-pointer {{ $isActiveChat==$row->id ? 'bg-slate-800' : '' }}" wire:click='chat({{ $row->id }})' >
+      <div wire:key='{{ $row->id }}' class="border-b border-gray-500 cursor-pointer {{ $isActiveChat==$row->id ? 'bg-slate-800' : '' }}" wire:click='chat({{ $row->id }}, "{{ $row->name }}")' >
           <div class="px-4 py-5 ">
               <div class="flex space-x-3">
                 <div class="flex-shrink-0">

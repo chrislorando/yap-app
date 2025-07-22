@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: yap-app-${COMPOSE_PROJECT_NAME}
     volumes:
-        - yap-public:/var/www/public
-        - yap-conf:/docker/nginx/conf.d
+      - yap-public:/var/www/public
+      - yap-conf:/docker/nginx/conf.d
       # - ./public:/var/www/public
       # - ./:/var/www
       # - laravel-storage:/var/www/storage
@@ -34,6 +34,7 @@ services:
         # - ./docker/nginx/conf.d:/etc/nginx/conf.d
         # - /var/lib/docker/volumes/jenkins_home/_data/workspace/${COMPOSE_PROJECT_NAME}/public:/var/www/public
         # - /var/lib/docker/volumes/jenkins_home/_data/workspace/${COMPOSE_PROJECT_NAME}/docker/nginx/conf.d:/etc/nginx/conf.d
+    command: /bin/sh -c "rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     depends_on:
       - app
     networks:

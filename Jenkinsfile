@@ -11,7 +11,7 @@ pipeline {
                 sh '''
                     # Remove containers
                     # docker compose down -v --rmi all || true
-                    docker compose down -v
+                    docker compose down
                     
                     # Remove project images
                     docker images -q ${COMPOSE_PROJECT_NAME}* | xargs -r docker rmi -f
@@ -22,16 +22,16 @@ pipeline {
             }
         }
 
-        stage('Prepare') {
-            steps {
-                sh '''
-                    mkdir -p storage/framework/{cache,sessions,views} 
-                    mkdir -p database
-                    touch database/database.sqlite
-                    chmod -R 775 storage database
-                '''
-            }
-        }
+        // stage('Prepare') {
+        //     steps {
+        //         sh '''
+        //             mkdir -p storage/framework/{cache,sessions,views} 
+        //             mkdir -p database
+        //             touch database/database.sqlite
+        //             chmod -R 775 storage database
+        //         '''
+        //     }
+        // }
 
         stage('Checkout') {
             steps {
